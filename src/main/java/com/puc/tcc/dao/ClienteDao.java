@@ -53,9 +53,9 @@ public class ClienteDao {
 			ps.setString(2, c.getNome());
 			ps.setString(3, c.getEstado());
 			ps.setString(4, c.getMunicipio());
-			ps.setString(5, c.getTelefone());
-			ps.setString(6,	c.getEmail());
-			ps.setString(7, c.getSenha());
+			ps.setString(5, c.getEndereco());
+			ps.setString(6,	c.getTelefone());
+			ps.setString(7, c.getEmail());
 			ps.setString(8, c.getSenha());
 			ps.executeUpdate();	
 			
