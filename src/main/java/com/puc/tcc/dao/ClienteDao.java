@@ -28,11 +28,11 @@ public class ClienteDao {
 	@Value("${spring.datasource.url}")
 	private String dbUrl;
 	
-	@Value("${spring.datasource.username}")
-	private String dbUser;
+	//@Value("${spring.datasource.username}")
+	//private String dbUser;
 	
-	@Value("${spring.datasource.password}")
-	private String dbSenha;
+	//@Value("${spring.datasource.password}")
+	//private String dbSenha;
 	
 	
 	
@@ -308,8 +308,8 @@ public class ClienteDao {
 	    } else {
 	      HikariConfig config = new HikariConfig();
 	      config.setJdbcUrl(dbUrl);
-	      config.setUsername(dbUser);
-	      config.setPassword(dbSenha);
+	     // config.setUsername(dbUser);
+	      //config.setPassword(dbSenha);
 	      return new HikariDataSource(config);
 	    }
 	  }
