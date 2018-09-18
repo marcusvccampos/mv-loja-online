@@ -21,6 +21,11 @@ public class ClienteController {
 	@Autowired
 	private ClienteDao clienteDao;
 	
+	@RequestMapping("/")
+	String index() {
+	    return "Deu certo!";
+	}
+	
 	@RequestMapping(value="/clientes",method=RequestMethod.GET)
 	@ResponseBody
 	public List<Cliente> getLista(){
@@ -66,8 +71,5 @@ public class ClienteController {
 	}
 	
 	
-	@RequestMapping("/")
-	  String index() {
-	    return "Deu certo!";
-	}
+	
 }
