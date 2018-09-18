@@ -23,7 +23,7 @@ public class ClienteController {
 	
 	@RequestMapping("/")
 	String index() {
-	    return "Deu certo!";
+	    return clienteDao.configdb();
 	}
 	
 	@RequestMapping(value="/clientes",method=RequestMethod.GET)

@@ -313,6 +313,43 @@ public class ClienteDao {
 	      return new HikariDataSource(config);
 	    }
 	  }
+	
+	public String configdb() {
+		Connection con  = null;
+		PreparedStatement ps = null;
+		String status = "Status do banco:";
+		
+		String query = ("CREATE TABLE IF NOT EXISTS Cliente(\r\n" + 
+	      		"    cpf varchar(14) not null,\r\n" + 
+	      		"    nome varchar(50) not null,\r\n" + 
+	      		"    endereco varchar(100) not null,\r\n" + 
+	      		"    estado varchar(2) not null,\r\n" + 
+	      		"    municipio varchar(50) not null,\r\n" + 
+	      		"    telefone varchar(20) not null,\r\n" + 
+	      		"    email varchar(50) not null,\r\n" + 
+	      		"    senha varchar(10) not null\r\n" + 
+	      		"    \r\n" + 
+	      		");");
+		try {
+			con =datasource.getConnection();
+			ps = con.prepareStatement(query);
+			ps.executeUpdate();
+			return status+" configurado";
+		} catch (SQLException e) {
+			// TODO: handle exception
+			e.printStackTrace();
+			return status+" não configurado";
+		}finally {
+			try {
+				ps.close();
+				con.close();
+			} catch (SQLException e2) {
+				// TODO: handle exception
+				e2.printStackTrace();
+			}
+		}
+		
+	}
 }
 
 
