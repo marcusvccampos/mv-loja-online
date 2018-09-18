@@ -322,9 +322,9 @@ public class ClienteDao {
 		String query = ("CREATE TABLE IF NOT EXISTS Cliente(\r\n" + 
 	      		"    cpf varchar(14) not null,\r\n" + 
 	      		"    nome varchar(50) not null,\r\n" + 
-	      		"    endereco varchar(100) not null,\r\n" + 
 	      		"    estado varchar(2) not null,\r\n" + 
-	      		"    municipio varchar(50) not null,\r\n" + 
+	      		"    municipio varchar(50) not null,\r\n" +
+	      		"    endereco varchar(100) not null,\r\n" + 
 	      		"    telefone varchar(20) not null,\r\n" + 
 	      		"    email varchar(50) not null,\r\n" + 
 	      		"    senha varchar(10) not null\r\n" + 
